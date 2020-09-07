@@ -1,6 +1,6 @@
-# Urban Sound Classification : striving forwards a fair comparison
+# Urban Sound Classification : striving towards a fair comparison
 
-This repo contains code for our paper: **Urban Sound Classification : striving forward a fair comparison**. We provide a fair comparison in sound classification by using the same input representation, same metrics and optimizer to assess performances. We preserve data augmentation used by original papers. We hope this framework could help evaluate new architectures in this field.
+This repo contains code for our paper: **Urban Sound Classification : striving towards a fair comparison**. We provide a fair comparison in sound classification by using the same input representation, same metrics and optimizer to assess performances. We preserve data augmentation used by original papers. We hope this framework could help evaluate new architectures in this field.
 
 ## Environement setup
 
