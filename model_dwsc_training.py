@@ -93,7 +93,7 @@ class DWSCClassifier(LightningModule):
         parser.add_argument("--dilation_shape", nargs="+", type=int, default=[10, 1])
 
         parser.add_argument(
-            "--pooling", type=str, default="att", choices=["max", "ave", "lin", "exp", "att", "auto", "hopfield"],
+            "--pooling", type=str, default="att", choices=["max", "ave", "lin", "exp", "att", "auto"],
         )
 
         parser.add_argument("--batch_size", type=int, default=24)
