@@ -1,6 +1,7 @@
 # Urban Sound Classification : striving towards a fair comparison
 
-This repo contains code for our paper: **Urban Sound Classification : striving towards a fair comparison**. We provide a fair comparison in sound classification by using the same input representation, same metrics and optimizer to assess performances. We preserve data augmentation used by original papers. We hope this framework could help evaluate new architectures in this field.
+This repo contains code for our paper: [**Urban Sound Classification : striving towards a fair comparison**](http://dcase.community/documents/challenge2020/technical_reports/DCASE2020_Arnault_70_t5.pdf). It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. We hope this framework could  help  evaluate  new  architectures  in  this  field.
+
 
 ## Environement setup
 
@@ -57,4 +58,11 @@ sh test_model_MODELNAME.sh
 
 ## Cite
 
-TODO
+~~~bibtex
+@article{Arnault2020,
+  title={CRNNs for Urban Sound Tagging with spatiotemporal context},
+  author={Arnault, Augustin and Riche, Nicolas},
+  journal={arXiv preprint arXiv:2008.10413},
+  year={2020}
+}
+~~~
