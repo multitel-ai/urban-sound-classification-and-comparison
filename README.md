@@ -43,7 +43,7 @@ python data_prep.py --download --mel
 
 If you want to manualy download and decompress files, you have to put everything in the `audio` directory (`cf config.py`). Then you have to use the above command without the `--download`.
 
-To use relabelling for TALNet modified, copy paste the `best2.csv` into the SONYC-UST folder.
+To use relabeling for TALNet modified, copy paste the `best2.csv` into the SONYC-UST folder.
 
 ## Results and how to reproduce experiments
 
