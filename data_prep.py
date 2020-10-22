@@ -12,15 +12,18 @@ if __name__ == "__main__":
 
     if args.download:
         print("Downloading Dataset")
-        dataset = SONYCUST(config.path_to_SONYCUST, "coarse", download=True)
-        dataset = ESC50(config.path_to_ESC50, fold=1, download=True)
-        dataset = UrbanSound8K(config.path_to_UrbanSound8K, fold=1, download=True)
+        dataset_SONYCUST = SONYCUST(config.path_to_SONYCUST, "coarse", download=True)
+        dataset_ESC50 = ESC50(config.path_to_ESC50, fold=1, download=True)
+        dataset_UrbanSound8K = UrbanSound8K(config.path_to_UrbanSound8K, fold=1, download=True)
 
     else:
-        dataset = SONYCUST(config.path_to_SONYCUST, "coarse")
-        dataset = ESC50(config.path_to_ESC50, fold=1)
-        dataset = UrbanSound8K(config.path_to_UrbanSound8K, fold=1)
+        dataset_SONYCUST = SONYCUST(config.path_to_SONYCUST, "coarse")
+        dataset_ESC50 = ESC50(config.path_to_ESC50, fold=1)
+        dataset_UrbanSound8K = UrbanSound8K(config.path_to_UrbanSound8K, fold=1)
 
     if args.mel:
         print("Computing mel spectrograms for TALNet")
-        dataset.compute_melspec()
+        dataset_SONYCUST.compute_melspec()
+        dataset_ESC50.compute_melspec()
+        dataset_UrbanSound8K.compute_melspec()
+
