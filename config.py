@@ -1,8 +1,7 @@
 # This file contains all useful paths
 import os
 
-# PATH ="../data/"
-PATH = "/Volumes/Untitled/ML"
+PATH ="../data/"
 
 # General directories
 path_to_SONYCUST = os.path.join(PATH, "SONYC-UST")
