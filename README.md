@@ -1,12 +1,16 @@
 # Urban Sound Classification : striving towards a fair comparison
 
 This repo contains code for our paper: [**Urban Sound Classification : striving towards a fair comparison**](https://arxiv.org/pdf/2010.11805.pdf). 
-It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. We hope this framework could  help  evaluate  new  architectures  in  this  field.
+
+It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. 
+
+We hope this framework could  help  evaluate  new  architectures  in  this  field.
 
 
 ## Environement setup
 
-Python version recquired : 3.6 (Higher might work).
+Python version recquired : 3.6 (higher might work).
+
 We recommand first to create a new environment in conda/virtualenv then to activate it.
 
 Pip install
@@ -46,9 +50,10 @@ If you want to manualy download and decompress files, you have to put everything
 
 To use relabeling for TALNet modified, copy paste the `best2.csv` into the SONYC-UST folder.
 
-To use transfer learning, download the pretrained models:
+To use transfer learning, download the pretrained models and copy-paste them into the `SONYC-UST/model` folder as shown below.
 - the pretrained TALNet on Audioset can be found [here](http://islpc21.is.cs.cmu.edu/yunwang/git/cmu-thesis/model/TALNet.pt).
 - the pretrained CNN10 on Audioset can be found [here](https://zenodo.org/record/3987831/files/Cnn10_mAP%3D0.380.pth?download=1).
+
 
 Your data folder should look like:
 
@@ -80,12 +85,15 @@ Your data folder should look like:
 
 ![Results](img/results.png)
 
-The code should work on both CPU and GPU.
-If you want to train everything on CPU, remove `gpus=1` in the corresponding model_*.py file. The scripts used for the comparison are the test_model_*.sh file. To run one test, just execute the following command :
+The code should work on both CPU and GPU. If you want to train everything on CPU, remove `gpus=1` in the corresponding model_*.py file. 
+
+The scripts used for the comparison are the test_model_*.sh file. To run one test, just execute the following command :
 
 ~~~bash
 sh test_model_MODELNAME.sh
 ~~~
+
+WARNING : CNN10TL and TALNETv3 require the pretrained models on Audioset befor running them.
 
 Training results are stored in the data folder:
 ~~~bash
