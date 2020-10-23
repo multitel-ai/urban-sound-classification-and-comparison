@@ -2,16 +2,12 @@
 
 This repo contains code for our paper: [**Urban Sound Classification : striving towards a fair comparison**](https://arxiv.org/pdf/2010.11805.pdf). 
 
-It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. 
-
-We hope this framework could  help  evaluate  new  architectures  in  this  field.
+It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. We hope this framework could  help  evaluate  new  architectures  in  this  field.
 
 
 ## Environement setup
 
-Python version recquired : 3.6 (higher might work).
-
-We recommand first to create a new environment in conda/virtualenv then to activate it.
+Python version recquired : 3.6 (higher might work). We recommand first to create a new environment in conda/virtualenv then to activate it.
 
 Pip install
 
