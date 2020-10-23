@@ -1,6 +1,7 @@
 # Urban Sound Classification : striving towards a fair comparison
 
-This repo contains code for our paper: [**Urban Sound Classification : striving towards a fair comparison**](https://arxiv.org/pdf/2010.11805.pdf). It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. We hope this framework could  help  evaluate  new  architectures  in  this  field.
+This repo contains code for our paper: [**Urban Sound Classification : striving towards a fair comparison**](https://arxiv.org/pdf/2010.11805.pdf). 
+It  provides  a  fair comparison  by  using  the  same  input  representation,  metrics and  optimizer  to  assess  performances.  We  preserve  data  augmentation used by the original papers. We hope this framework could  help  evaluate  new  architectures  in  this  field.
 
 
 ## Environement setup
@@ -46,7 +47,7 @@ If you want to manualy download and decompress files, you have to put everything
 To use relabeling for TALNet modified, copy paste the `best2.csv` into the SONYC-UST folder.
 
 To use transfer learning, download the pretrained models:
-- the pretrained TALNet on Audioset can be found [at this url] (http://islpc21.is.cs.cmu.edu/yunwang/git/cmu-thesis/model/TALNet.pt).
+- the pretrained TALNet on Audioset can be found [here](http://islpc21.is.cs.cmu.edu/yunwang/git/cmu-thesis/model/TALNet.pt).
 - the pretrained CNN10 on Audioset can be found [here](https://zenodo.org/record/3987831/files/Cnn10_mAP%3D0.380.pth?download=1).
 
 Your data folder should look like:
@@ -84,6 +85,20 @@ If you want to train everything on CPU, remove `gpus=1` in the corresponding mod
 
 ~~~bash
 sh test_model_MODELNAME.sh
+~~~
+
+Training results are stored in the data folder:
+~~~bash
+.
+└── data                        # Given by PATH in config.py
+    ├── SONYC-UST                   
+    ├── ESC-50 
+    ├── UrbanSound8k
+    └── summaries
+         ├── CNN10AllDatasets
+         │  
+         ...
+         └── TFNetAllDatasets
 ~~~
 
 ## Cite
