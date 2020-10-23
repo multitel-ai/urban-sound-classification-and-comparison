@@ -7,7 +7,7 @@ It  provides  a  fair comparison  by  using  the  same  input  representation,  
 
 ## Environement setup
 
-Python version recquired : 3.6 (higher might work). We recommand first to create a new environment in conda/virtualenv then to activate it.
+Python version recquired : 3.6 (higher work). We recommand first to create a new environment in conda/virtualenv then to activate it.
 
 Pip install
 
@@ -81,11 +81,11 @@ Your data folder should look like:
 
 ![Results](img/results.png)
 
-The code should work on both CPU and GPU. If you want to train everything on CPU, remove `gpus=1` in the corresponding model_*.py file. 
-The scripts used for the comparison are the test_model_*.sh file. To run one test, just execute the following command :
+The code should work on both CPU and GPU. If you want to train everything on CPU, remove `gpus=1` in the corresponding model_<model_name>.py file. 
+The scripts used for the comparison are the test_model_<model_name>.sh file. To run one test, just execute the following command :
 
 ~~~bash
-sh test_model_MODELNAME.sh
+sh test_model_<model_name>.sh
 ~~~
 
 WARNING : CNN10TL and TALNETv3 require the pretrained models on Audioset before running them.
