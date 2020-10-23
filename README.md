@@ -82,7 +82,6 @@ Your data folder should look like:
 ![Results](img/results.png)
 
 The code should work on both CPU and GPU. If you want to train everything on CPU, remove `gpus=1` in the corresponding model_*.py file. 
-
 The scripts used for the comparison are the test_model_*.sh file. To run one test, just execute the following command :
 
 ~~~bash
