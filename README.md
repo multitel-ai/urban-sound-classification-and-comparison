@@ -88,7 +88,7 @@ The scripts used for the comparison are the test_model_*.sh file. To run one tes
 sh test_model_MODELNAME.sh
 ~~~
 
-WARNING : CNN10TL and TALNETv3 require the pretrained models on Audioset befor running them.
+WARNING : CNN10TL and TALNETv3 require the pretrained models on Audioset before running them.
 
 Training results are stored in the data folder:
 ~~~bash
