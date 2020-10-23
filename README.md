@@ -30,6 +30,35 @@ pip install torchaudio -f https://download.pytorch.org/whl/torch_stable.html
 ## Editing `config.py`
 
 You should edit PATH in `config.py` to match the directory in which everything will be stored.
+Your data folder should look like:
+
+~~~bash
+.
+└── data                        # Given by PATH in config.py
+    ├── SONYC-UST                   
+         ├── audio              # Put all audio in it 
+         ├── melTALNet          # Put all mel-spectrograms in it  
+         │  
+         ...
+         └── model              # Put TALNet and CNN10 weights here
+    ├── ESC-50 
+         ├── audio             
+         ├── melTALNet 
+         ├── meta
+         │  
+         ...
+    ├── UrbanSound8k
+         ├── audio             
+         ├── melTALNet  
+         ├── metadata
+         │  
+         ...
+    └── summaries
+          ├── CNN10AllDatasets
+          │  
+          ...
+          └── TFNetAllDatasets
+~~~
 
 ## Data download and preprocessing
 
