@@ -14,7 +14,8 @@ class ConvBlock(nn.Module):
         self, n_input_feature_maps, n_output_feature_maps, kernel_size, batch_norm=False, pool_stride=None,
     ):
         super(ConvBlock, self).__init__()
-        assert all(int(x) % 2 == 1 for x in kernel_size)
+        # assert all(int(x) % 2 == 1 for x in kernel_size)
+        assert int(kernel_size) % 2 == 1
         self.n_input = n_input_feature_maps
         self.n_output = n_output_feature_maps
         self.kernel_size = kernel_size
@@ -24,7 +25,8 @@ class ConvBlock(nn.Module):
             int(self.n_input),
             int(self.n_output),
             int(self.kernel_size),
-            padding=tuple(int(int(x) / 2) for x in self.kernel_size),
+            # padding=tuple(int(int(x) / 2) for x in self.kernel_size),
+            padding=tuple(int(int(self.kernel_size)/2) for i in range(2)),
             bias=~batch_norm,
         )
         if batch_norm:
@@ -679,7 +681,7 @@ class TALNetV3NoMeta(nn.Module):
         self.spec_augmenter = SpecAugmentation(
             time_drop_width=64, time_stripes_num=2, freq_drop_width=8, freq_stripes_num=2,
         )
-        self.bn0 = nn.BatchNorm2d(64)
+        self.bn0 = nn.BatchNorm2d(num_mels)
 
         # Temp (Transfo + GRU)
         self.gru = nn.GRU(
