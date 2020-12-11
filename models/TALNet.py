@@ -10,12 +10,14 @@ from torchlibrosa.augmentation import SpecAugmentation
 
 
 class ConvBlock(nn.Module):
+    """Convolutionnal Block from the original TALNet implementation
+    See https://github.com/MaigoAkisame/cmu-thesis
+    """
     def __init__(
         self, n_input_feature_maps, n_output_feature_maps, kernel_size, batch_norm=False, pool_stride=None,
     ):
         super(ConvBlock, self).__init__()
-        # assert all(int(x) % 2 == 1 for x in kernel_size)
-        assert int(kernel_size) % 2 == 1
+        assert all(int(x) % 2 == 1 for x in kernel_size)
         self.n_input = n_input_feature_maps
         self.n_output = n_output_feature_maps
         self.kernel_size = kernel_size
@@ -25,8 +27,7 @@ class ConvBlock(nn.Module):
             int(self.n_input),
             int(self.n_output),
             int(self.kernel_size),
-            # padding=tuple(int(int(x) / 2) for x in self.kernel_size),
-            padding=tuple(int(int(self.kernel_size)/2) for i in range(2)),
+            padding=tuple(int(int(x) / 2) for x in self.kernel_size),
             bias=~batch_norm,
         )
         if batch_norm:
@@ -44,6 +45,9 @@ class ConvBlock(nn.Module):
 
 
 class TALNet(nn.Module):
+    """Original TALNet from Polyphonic Sound Event Detection with Weak Labeling
+    See https://github.com/MaigoAkisame/cmu-thesis
+    """
     def __init__(self, args, num_mels, num_classes):
         super(TALNet, self).__init__()
         self.__dict__.update(args.__dict__)  # Instill all args into self
@@ -679,7 +683,7 @@ class TALNetV3NoMeta(nn.Module):
             n_input = n_output
         # Spec augmenter
         self.spec_augmenter = SpecAugmentation(
-            time_drop_width=64, time_stripes_num=2, freq_drop_width=8, freq_stripes_num=2,
+            time_drop_width=64, time_stripes_num=2, freq_drop_width=num_mels//8, freq_stripes_num=2,
         )
         self.bn0 = nn.BatchNorm2d(num_mels)
 
